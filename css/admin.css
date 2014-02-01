@@ -1,6 +1,6 @@
 /**
- * @todo short description
- * 
+ * Admin specific styles
+ *
  * @author		WPCollab Team
  * @copyright	Copyright (c) 2014, WPCollab Team
  * @license		http://www.gnu.org/licenses/gpl-2.0.html GPLv2
@@ -8,3 +8,27 @@
  * @version		0.1-alpha
  */
 
+.dropdown-menu > li {
+	padding: 0;
+	margin-bottom: 0;
+}
+
+.dropdown-menu > li:hover,
+.dropdown-menu > .active {
+	background: #0074A2;
+}
+
+.dropdown-menu > li:hover > a,
+.dropdown-menu > li.active > a {
+	color: #FFF;
+}
+
+.dropdown-menu a {
+	display: block;
+	padding: 4px 5px;
+}
+
+.dropdown-menu img {
+	vertical-align: top;
+	margin-right: 5px;
+}
