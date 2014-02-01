@@ -78,14 +78,14 @@ class WPCollab_HelloEmoji_Admin {
 		
 		add_settings_section(
 			'defaults',
-			__( 'Defaults', 'hallo-emoji' ),
+			__( 'Defaults', 'hello-emoji' ),
 			array( $this, 'defaults_desc'),
 			'wpcollab-hello-emoji-settings'
 		);
 		
 		add_settings_field(
 			'defaults-output',
-			__( 'Defaults Field', 'hallo-emoji' ),
+			__( 'Defaults Field', 'hello-emoji' ),
 			array( $this, 'render_field' ), // @TODO
 			'wpcollab-hello-emoji-settings',
 			'defaults',
@@ -109,8 +109,8 @@ class WPCollab_HelloEmoji_Admin {
 		
 		$this->pagehook = add_submenu_page(
 			'options-general.php',
-			__( 'Emoji Settings', 'hallo-emoji' ),
-			__( 'Emoji', 'hallo-emoji' ),
+			__( 'Emoji Settings', 'hello-emoji' ),
+			__( 'Emoji', 'hello-emoji' ),
 			apply_filters( 'wpcollab_hello_emoji_settings_cap', 'manage_options' ),
 			'emoji',
 			array( $this, 'settings_page' )
@@ -149,7 +149,7 @@ class WPCollab_HelloEmoji_Admin {
 	 * @since 1.0
 	 */		
 	function defaults_desc() {
-		echo '<p>' . __( 'Some Description', 'hallo-emoji' ) . '</p>';
+		echo '<p>' . __( 'Some Description', 'hello-emoji' ) . '</p>';
 	}
 	
 	/**
