@@ -1,4 +1,6 @@
 # Hello-Emoji
+[![Gitter chat](https://badges.gitter.im/WPCollab/Hello-Emoji.png)](https://gitter.im/WPCollab/Hello-Emoji)
+
 __@todo short description __
 
 [Homepage][1.1] | [WordPress.org][1.2]
