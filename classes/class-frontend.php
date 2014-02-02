@@ -57,6 +57,36 @@ class WPCollab_HelloEmoji_Frontend {
 		
 		self::$instance = $this;
 		
+
+		// Filter the_content to add a css class to the content
+		add_filter( 'the_content', array( $this, 'wrap_content' ) );
+		// Filter the_content to add a css class to the comment
+		add_filter( 'comment_text', array( $this, 'wrap_content' ) );
+
 	} // END __construct()
 		
+	/**
+	 * Add class to content and comment
+	 *
+	 * @since   1.0.0
+	 * @access  public
+	 *
+	 * @return  void
+	 */
+	public function wrap_content( $content ) {
+
+		global $post;
+
+		if ( ! empty( $content ) ) {
+
+			$classes = apply_filters( 'wpcollab_hello_emoji_css_classes', array( 'wpcollab-hello-emoji' ) );
+			$open_tag = '<div class="' . join( ' ', $classes ) . '">';
+			$close_tag = '</div>';
+
+			return $open_tag . $content . $close_tag;
+		}
+
+		return $content;
+	} // END wrap_content()
+
 } // END class WPCollab_HelloEmoji_Frontend

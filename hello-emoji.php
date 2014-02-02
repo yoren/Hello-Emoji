@@ -101,7 +101,7 @@ class WPCollab_HelloEmoji {
 
 			$wpcollab_helloemoji_admin = new WPCollab_HelloEmoji_Admin();
 
-		} elseif ( !is_admin ) {
+		} elseif ( !is_admin() ) {
 
 			$wpcollab_helloemoji_frontend = new WPCollab_HelloEmoji_Frontend();
 
