@@ -1,6 +1,6 @@
 === Hello Emoji ===
 
-Contributors: slobodanmanic, 1fixdotio
+Contributors: cfoellmann, Shelob9, slobodanmanic, vengisss, 1fixdotio
 Donate link: http://make.wpcollab.co/
 Tags: content, comments, emoji
 Requires at least: 3.1
@@ -63,6 +63,7 @@ Of course! Please come to [our P2](http://make.wpcollab.co) and tell us more!
 == Screenshots ==
 
 1. The Settings page.
+2. Type a ":" in the editor, you'll get an auto-complete list of Emoji suggestions.
 
 == Changelog ==
 
