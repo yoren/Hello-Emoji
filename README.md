@@ -32,7 +32,7 @@ __@todo short description __
 __[GPLv2 or later](http://www.gnu.org/licenses/gpl-2.0.html)__
 
 ```
-Hello Emoji  
+Hello Emoji
 Copyright (C) 2014 WPCollab Team (https://github.com/WPCollab/Hello-Emoji/graphs/contributors)
 
 This program is free software; you can redistribute it and/or

@@ -11,7 +11,7 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: hello-emoji
 Domain Path: /languages
 
-	Hello Emoji  
+	Hello Emoji
 	Copyright (C) 2014 WPCollab Team (https://github.com/WPCollab/Hello-Emoji/graphs/contributors)
 
 	This program is free software; you can redistribute it and/or
