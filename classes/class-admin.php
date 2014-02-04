@@ -57,11 +57,10 @@ class WPCollab_HelloEmoji_Admin {
 
 		self::$instance = $this;
 
-		// Load admin JavaScript.
-		add_action( 'admin_enqueue_scripts', array( $this, 'enqueue_admin_scripts' ) );
-
 		add_action( 'admin_init', array( $this, 'register_settings' ) );
 		add_action( 'admin_menu', array( $this, 'admin_menu' ) );
+		/** Load admin JavaScript. */
+		add_action( 'admin_enqueue_scripts', array( $this, 'enqueue_admin_scripts' ) );
 
 	} // END __construct()
 
@@ -73,16 +72,21 @@ class WPCollab_HelloEmoji_Admin {
 	 *
 	 * @return  void
 	 */
-	public function enqueue_admin_scripts() {
+	public function enqueue_admin_scripts( $hook ) {
 
-		wp_enqueue_script( 'jquery-textcomplete-script', plugins_url( 'lib/jquery-textcomplete/jquery.textcomplete.js', WPCollab_HelloEmoji::get_file() ), array( 'jquery' ), WPCollab_HelloEmoji::$version, true );
+		$dev = apply_filters( 'wpcollab_hello_emoji_debug_mode', WP_DEBUG ) ? '' : '.min';
 
-		wp_enqueue_style( 'jquery-textcomplete-style', plugins_url( 'lib/jquery-textcomplete/jquery.textcomplete.css', WPCollab_HelloEmoji::get_file() ), array(), WPCollab_HelloEmoji::$version );
+		if ( $hook == 'post.php' || $hook == 'post-new.php' && isset( $_GET['post_type'] ) ) { // @todo (de)activate for post_types activated in settings
 
-		wp_enqueue_style( 'hello-emoji-admin-style', plugins_url( 'css/admin.css', WPCollab_HelloEmoji::get_file() ), array(), WPCollab_HelloEmoji::$version );
+			wp_enqueue_script( 'jquery-textcomplete-script', plugins_url( "lib/jquery-textcomplete/jquery.textcomplete{$dev}.js", WPCollab_HelloEmoji::get_file() ), array( 'jquery' ), WPCollab_HelloEmoji::$version, true );
+			wp_enqueue_script( 'hello-emoji-admin-script', plugins_url( 'js/admin.js', WPCollab_HelloEmoji::get_file() ), array( 'jquery-textcomplete-script' ), WPCollab_HelloEmoji::$version, true );
 
-		wp_enqueue_script( 'hello-emoji-admin-script', plugins_url( 'js/admin.js', WPCollab_HelloEmoji::get_file() ), array( 'jquery-textcomplete-script' ), WPCollab_HelloEmoji::$version, true );
-		wp_localize_script( 'hello-emoji-admin-script', 'hello_emoji', array( 'images_src' => plugins_url( 'images/emoji', WPCollab_HelloEmoji::get_file() ) ) );
+			wp_enqueue_style( 'jquery-textcomplete-style', plugins_url( "lib/jquery-textcomplete/jquery.textcomplete{$dev}.css", WPCollab_HelloEmoji::get_file() ), array(), WPCollab_HelloEmoji::$version );
+			wp_enqueue_style( 'hello-emoji-admin-style', plugins_url( 'css/admin.css', WPCollab_HelloEmoji::get_file() ), array(), WPCollab_HelloEmoji::$version );
+
+			wp_localize_script( 'hello-emoji-admin-script', 'hello_emoji', array( 'images_src' => plugins_url( 'lib/jquery-emoji/images/emojis', WPCollab_HelloEmoji::get_file() ) ) );
+
+		}
 
 	} // END enqueue_admin_scripts()
 
@@ -101,46 +105,37 @@ class WPCollab_HelloEmoji_Admin {
 	public function register_settings() {
 
 		add_settings_section(
-			'defaults',
-			__( 'Defaults', 'hello-emoji' ),
-			array( $this, 'defaults_desc'),
+			'post-types',
+			__( 'Post Types', 'hello-emoji' ),
+			array( $this, 'post_types_desc'),
 			'wpcollab-hello-emoji-settings'
 		);
 
-		add_settings_field(
-			'defaults-output',
-			__( 'Defaults Field', 'hello-emoji' ),
-			array( $this, 'render_field' ), // @TODO
-			'wpcollab-hello-emoji-settings',
-			'defaults',
-			array()
-		);
+        /**Create an option to enable emojis per post type**/
+        //get all register post types
+        $post_types = get_post_types();
+        //remove attachments, revisions and nav_menu_items from array
+        unset($post_types["attachment"], $post_types["revision"], $post_types["nav_menu_item"] );
+        foreach ($post_types as $post_type ) {
+            /**Prepare to make setting**/
+            //get post type object
+            $obj = get_post_type_object( $post_type );
+            //get the label for the post type for display use
+            $post_type_label = $obj->labels->name;
+            //create option name with post type name
+            $uniqueOptionName = "wpcollab-hello-emoji_" . $post_type;
 
-		/**Create an option to enable emojis per post type**/
-		//get all register post types
-		$post_types = get_post_types();
-		//remove attachments, revisions and nav_menu_items from array
-		unset($post_types["attachment"], $post_types["revision"], $post_types["nav_menu_item"] );
-		foreach ($post_types as $post_type ) {
-			/**Prepare to make setting**/
-			//get post type object
-			$obj = get_post_type_object( $post_type );
-			//get the label for the post type for display use
-			$post_type_label = $obj->labels->name;
-			//create option name with post type name
-			$uniqueOptionName = "wpcollab-hello-emoji_" . $post_type;
-
-			//This will have to loop, make a create settings field function and pass the field ID
-			add_settings_field(
-				$uniqueOptionName,
-				__( 'Enable for ' . $post_type_label, 'hello-emoji' ),
-				array( $this, 'per_post_types' ),
-				'wpcollab-hello-emoji-settings',
-				'defaults',
-				$uniqueOptionName
-			);
-			register_setting( 'wpcollab-hello-emoji-settings', $uniqueOptionName );
-		}
+            //This will have to loop, make a create settings field function and pass the field ID
+            add_settings_field(
+                $uniqueOptionName,
+                __( 'Enable for ' . $post_type_label, 'hello-emoji' ),
+                array( $this, 'per_post_types' ),
+                'wpcollab-hello-emoji-settings',
+                'post-types',
+                $uniqueOptionName
+            );
+            register_setting( 'wpcollab-hello-emoji-settings', $uniqueOptionName );
+        }
 
 	} // END register_settings()
 
@@ -179,7 +174,7 @@ class WPCollab_HelloEmoji_Admin {
 	 * @see		get_current_screen()
 	 *
 	 * @return	string
-	 */
+ 	 */
 	public function help_tabs() {
 
 		$screen = get_current_screen();
@@ -194,27 +189,27 @@ class WPCollab_HelloEmoji_Admin {
 	} // END help_tabs()
 
 
-	/**
-	 * Callbacks for post type enable options
-	 *
-	 * @since 0.1.0
-	 */
-	function per_post_types($uniqueOptionName) {
-		$setting = esc_attr( get_option( $uniqueOptionName ) );
-		if ($setting == '1') {
-			$checked = 'checked';
-		} else {
-			$checked = '';
-		}
-		echo "<input type='checkbox' id='$uniqueOptionName' name='$uniqueOptionName' value='1' $checked/>";
-	}
-	/**
+    /**
+     * Callbacks for post type enable options
+     *
+     * @since 0.1.0
+     */
+    function per_post_types($uniqueOptionName) {
+        $setting = esc_attr( get_option( $uniqueOptionName ) );
+        if ($setting == '1') {
+            $checked = 'checked';
+        } else {
+            $checked = '';
+        }
+        echo "<input type='checkbox' id='$uniqueOptionName' name='$uniqueOptionName' value='1' $checked/>";
+    }
+    /**
 	 * @todo
 	 *
 	 * @since 1.0
 	 */
-	function defaults_desc() {
-		echo '<p>' . __( 'Some Description', 'hello-emoji' ) . '</p>';
+	function post_types_desc() {
+		echo '<p>' . __( 'Some Description about Post Type stuff', 'hello-emoji' ) . '</p>';
 	}
 
 	/**
