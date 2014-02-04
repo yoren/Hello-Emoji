@@ -102,6 +102,10 @@ class WPCollab_HelloEmoji_Frontend {
 	 */
 	public function enqueue_frontend_scripts() {
 
+		wp_enqueue_script( 'jquery-textcomplete-script', plugins_url( 'lib/jquery-textcomplete/jquery.textcomplete.js', WPCollab_HelloEmoji::get_file() ), array( 'jquery' ), WPCollab_HelloEmoji::$version, true );
+
+		wp_enqueue_style( 'hello-emoji-style', plugins_url( 'css/hello-emoji.css', WPCollab_HelloEmoji::get_file() ), array(), WPCollab_HelloEmoji::$version );
+
 		wp_enqueue_script( 'jquery-emoji-script', plugins_url( 'lib/jquery-emoji/jquery.emoji.js', WPCollab_HelloEmoji::get_file() ), array( 'jquery' ), WPCollab_HelloEmoji::$version, true );
 
 		wp_enqueue_script( 'hello-emoji-script', plugins_url( 'js/hello-emoji.js', WPCollab_HelloEmoji::get_file() ), array( 'jquery-emoji-script' ), WPCollab_HelloEmoji::$version, true );
