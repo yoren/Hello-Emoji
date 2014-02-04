@@ -198,6 +198,10 @@
 			}
 		]);
 
+		if(typeof(pagenow) !== 'undefined' && pagenow == 'dashboard') {
+			$('.textcomplete-wrapper').removeAttr('style');
+		}
+
 	});
 
 }(jQuery));
