@@ -127,9 +127,8 @@ class WPCollab_HelloEmoji {
 	public function get_defaults() {
 
 		$defaults = array(
-			'post'		=> true,
-			'page'		=> true,
-			'comments'	=> true,
+			'post'	=> true,
+			'page'	=> true,
 		);
 
 		$options = apply_filters( 'wpcollab_hello_emoji_defaults', $defaults );

@@ -105,37 +105,43 @@ class WPCollab_HelloEmoji_Admin {
 	public function register_settings() {
 
 		add_settings_section(
-			'post-types',
-			__( 'Post Types', 'hello-emoji' ),
-			array( $this, 'post_types_desc'),
-			'wpcollab-hello-emoji-settings'
+			'post_types', // Section name
+			__( 'Post Types', 'hello-emoji' ), // Section title
+			array( $this, 'post_types_desc'), // Callback function
+			'wpcollab_hello_emoji_settings' // Page on which to display
 		);
 
-        /**Create an option to enable emojis per post type**/
-        //get all register post types
-        $post_types = get_post_types();
-        //remove attachments, revisions and nav_menu_items from array
-        unset($post_types["attachment"], $post_types["revision"], $post_types["nav_menu_item"] );
-        foreach ($post_types as $post_type ) {
-            /**Prepare to make setting**/
-            //get post type object
-            $obj = get_post_type_object( $post_type );
-            //get the label for the post type for display use
-            $post_type_label = $obj->labels->name;
-            //create option name with post type name
-            $uniqueOptionName = "wpcollab-hello-emoji_" . $post_type;
+		/**Create an option to enable emojis per post type**/
+		//get all register post types
+		$post_types = get_post_types();
+		//remove attachments, revisions and nav_menu_items from array
+		unset($post_types["attachment"], $post_types["revision"], $post_types["nav_menu_item"] );
+		foreach ($post_types as $post_type ) {
+			/**Prepare to make setting**/
+			//get post type object
+			$obj = get_post_type_object( $post_type );
+			//get the label for the post type for display use
+			$post_type_label = $obj->labels->name;
+			//create option name with post type name
+			$uniqueOptionName = $post_type;
 
-            //This will have to loop, make a create settings field function and pass the field ID
-            add_settings_field(
-                $uniqueOptionName,
-                __( 'Enable for ' . $post_type_label, 'hello-emoji' ),
-                array( $this, 'per_post_types' ),
-                'wpcollab-hello-emoji-settings',
-                'post-types',
-                $uniqueOptionName
-            );
-            register_setting( 'wpcollab-hello-emoji-settings', $uniqueOptionName );
-        }
+			//This will have to loop, make a create settings field function and pass the field ID
+			add_settings_field(
+				$uniqueOptionName, // ID
+				__( 'Enable for ' . $post_type_label, 'hello-emoji' ), // Label
+				array( $this, 'per_post_types' ), // Callback
+				'wpcollab_hello_emoji_settings', // Page on which to display
+				'post_types', // Section
+				array(
+					$uniqueOptionName
+				)
+			);
+		}
+
+		register_setting(
+			'wpcollab_hello_emoji_settings',
+			'wpcollab_hello_emoji_settings'
+		);
 
 	} // END register_settings()
 
@@ -152,8 +158,7 @@ class WPCollab_HelloEmoji_Admin {
 	 */
 	public function admin_menu() {
 
-		$this->pagehook = add_submenu_page(
-			'options-general.php',
+		$this->pagehook = add_options_page(
 			__( 'Emoji Settings', 'hello-emoji' ),
 			__( 'Emoji', 'hello-emoji' ),
 			apply_filters( 'wpcollab_hello_emoji_settings_cap', 'manage_options' ),
@@ -188,22 +193,21 @@ class WPCollab_HelloEmoji_Admin {
 
 	} // END help_tabs()
 
+	/**
+	* Callbacks for post type enable options
+	*
+	* @since 0.1.0
+	*/
+	function per_post_types( $args ) {
+		$settings = get_option( 'wpcollab_hello_emoji_settings' );
+		$setting = ( isset( $settings[$args[0]] ) ) ? esc_attr( $settings[$args[0]] ) : false;
+		$post_type = $args[0];
+		$checked = checked( '1', $setting, false );
+		
+		echo "<input type='checkbox' id='wpcollab_hello_emoji_$post_type' name='wpcollab_hello_emoji_settings[$post_type]' value='1' $checked />";
+	}
 
-    /**
-     * Callbacks for post type enable options
-     *
-     * @since 0.1.0
-     */
-    function per_post_types($uniqueOptionName) {
-        $setting = esc_attr( get_option( $uniqueOptionName ) );
-        if ($setting == '1') {
-            $checked = 'checked';
-        } else {
-            $checked = '';
-        }
-        echo "<input type='checkbox' id='$uniqueOptionName' name='$uniqueOptionName' value='1' $checked/>";
-    }
-    /**
+	/**
 	 * @todo
 	 *
 	 * @since 1.0
@@ -233,10 +237,11 @@ class WPCollab_HelloEmoji_Admin {
 
 		<div class="wrap">
 			<h2><?php _e( 'Emoji Settings', 'hello-emoji' ); ?></h2>
-			<form action="" method="post">
+			<form action="options.php" method="post">
 			<?php
 				wp_nonce_field( 'wpcollab-hello-emoji-settings-update', 'wpcollab-hello-emoji-settings-nonce' );
-				do_settings_sections( 'wpcollab-hello-emoji-settings' );
+				settings_fields( 'wpcollab_hello_emoji_settings' );
+				do_settings_sections( 'wpcollab_hello_emoji_settings' );
 				submit_button();
 			?>
 			</form>
