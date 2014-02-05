@@ -76,7 +76,7 @@ class WPCollab_HelloEmoji_Admin {
 
 		$dev = apply_filters( 'wpcollab_hello_emoji_debug_mode', WP_DEBUG ) ? '' : '.min';
 
-		if ( $hook == 'post.php' || $hook == 'post-new.php' && isset( $_GET['post_type'] ) ) { // @todo (de)activate for post_types activated in settings
+		if ( $hook == 'post.php' || $hook == 'post-new.php' || $hook == 'comment.php' ) { // @todo (de)activate for post_types activated in settings
 
 			wp_enqueue_script( 'jquery-textcomplete-script', plugins_url( "lib/jquery-textcomplete/jquery.textcomplete{$dev}.js", WPCollab_HelloEmoji::get_file() ), array( 'jquery' ), WPCollab_HelloEmoji::$version, true );
 			wp_enqueue_script( 'hello-emoji-admin-script', plugins_url( 'js/admin.js', WPCollab_HelloEmoji::get_file() ), array( 'jquery-textcomplete-script' ), WPCollab_HelloEmoji::$version, true );
