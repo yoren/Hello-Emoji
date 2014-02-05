@@ -110,7 +110,6 @@ class WPCollab_HelloEmoji {
 		add_action( 'plugins_loaded', array( $this, 'load_plugin_textdomain' ) );
 
 		register_activation_hook( __FILE__, array( 'WPCollab_HelloEmoji', 'activate_plugin' ) );
-		register_deactivation_hook( __FILE__, array( 'WPCollab_HelloEmoji', 'deactivate_plugin' ) );
 
 	} // END __construct()
 
@@ -221,6 +220,7 @@ class WPCollab_HelloEmoji {
 	 * Fired when plugin is activated
 	 *
 	 * @since	1.0.0
+	 * @static
 	 * @access	public
 	 *
 	 * @action	register_activation_hook
@@ -228,7 +228,7 @@ class WPCollab_HelloEmoji {
 	 * @param	bool	$network_wide TRUE if WPMU 'super admin' uses Network Activate option
 	 * @return	void
 	 */
-	public function activate_plugin( $network_wide ) {
+	public static function activate_plugin( $network_wide ) {
 
 		$defaults = self::get_defaults();
 
@@ -252,21 +252,6 @@ class WPCollab_HelloEmoji {
 		}
 
 	} // END activate_plugin()
-
-	/**
-	 * Fired when plugin is adectivated
-	 *
-	 * @since	1.0.0
-	 * @access	public
-	 *
-	 * @action	register_deactivation_hook
-	 *
-	 * @param	bool	$network_wide TRUE if WPMU 'super admin' uses Network Activate option
-	 * @return	void
-	 */
-	public function deactivate_plugin( $network_wide ) {
-
-	} // END deactivate_plugin()
 
 } // END class WPCollab_HelloEmoji
 
