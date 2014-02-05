@@ -84,11 +84,11 @@ class WPCollab_HelloEmoji_Frontend {
 			$settings = get_option( 'wpcollab_hello_emoji_settings' );
 
 			// Check if post type is enabled
-			if ( 'the_content' == current_filter() && !$settings[$post->post_type] ) {
+			if ( 'the_content' == current_filter() && ! isset( $settings[$post->post_type] ) ) {
 				return $content;
 			}
 			// Check if comment is enabled
-			if ( 'comment_text' == current_filter() && !$settings['comment'] ) {
+			if ( 'comment_text' == current_filter() && ! isset( $settings['comment'] ) ) {
 				return $content;
 			}
 
