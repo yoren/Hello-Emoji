@@ -156,6 +156,24 @@ class WPCollab_HelloEmoji_Admin {
 				)
 			);
 
+		add_settings_section(
+			'autocomplete', // Section name
+			__( 'Auto Complete', 'hello-emoji' ), // Section title
+			array( $this, 'autocomplete_desc'), // Callback function
+			'wpcollab_hello_emoji_settings' // Page on which to display
+		);
+
+		add_settings_field(
+				'autocomplete', // ID
+				__( 'Enable Auto Complete', 'hello-emoji' ), // Label
+				array( $this, 'autocomplete' ), // Callback
+				'wpcollab_hello_emoji_settings', // Page on which to display
+				'autocomplete', // Section
+				array(
+					'label_for' => 'wpcollab_hello_emoji_autocomplete'
+				)
+			);
+
 		register_setting(
 			'wpcollab_hello_emoji_settings',
 			'wpcollab_hello_emoji_settings'
@@ -244,8 +262,22 @@ class WPCollab_HelloEmoji_Admin {
 	 *
 	 * @since 1.0
 	 */
+	function autocomplete() {
+
+		$settings = get_option( 'wpcollab_hello_emoji_settings' );
+		$setting = ( isset( $settings['autocomplete'] ) ) ? esc_attr( $settings['autocomplete'] ) : false;
+		$checked = checked( '1', $setting, false );
+
+		echo "<input type='checkbox' id='wpcollab_hello_emoji_autocomplete' name='wpcollab_hello_emoji_settings[autocomplete]' value='1' $checked />";
+	}
+
+	/**
+	 * @todo
+	 *
+	 * @since 1.0
+	 */
 	function post_types_desc() {
-		echo '<p>' . __( 'Some Description about Post Type stuff', 'hello-emoji' ) . '</p>';
+		echo '<p>' . __( 'Check the post types you\'d like to enable Emoji.', 'hello-emoji' ) . '</p>';
 	}
 
 	/**
@@ -263,8 +295,9 @@ class WPCollab_HelloEmoji_Admin {
 	 *
 	 * @since 1.0
 	 */
-	function render_field() {
-		echo 'some-output';
+	function autocomplete_desc() {
+
+		echo '<p>' . __( 'Check if you want to enable Emoji Auto Complete in the editor (in Text mode).', 'hello-emoji' ) . '</p>';
 	}
 
 	/**
