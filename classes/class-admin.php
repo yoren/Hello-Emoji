@@ -138,6 +138,24 @@ class WPCollab_HelloEmoji_Admin {
 			);
 		}
 
+		add_settings_section(
+			'comments', // Section name
+			__( 'Comments', 'hello-emoji' ), // Section title
+			array( $this, 'comments_desc'), // Callback function
+			'wpcollab_hello_emoji_settings' // Page on which to display
+		);
+
+		add_settings_field(
+				'comment', // ID
+				__( 'Enable for Comments', 'hello-emoji' ), // Label
+				array( $this, 'comments' ), // Callback
+				'wpcollab_hello_emoji_settings', // Page on which to display
+				'comments', // Section
+				array(
+					'label_for' => 'wpcollab_hello_emoji_comment'
+				)
+			);
+
 		register_setting(
 			'wpcollab_hello_emoji_settings',
 			'wpcollab_hello_emoji_settings'
@@ -203,8 +221,22 @@ class WPCollab_HelloEmoji_Admin {
 		$setting = ( isset( $settings[$args[0]] ) ) ? esc_attr( $settings[$args[0]] ) : false;
 		$post_type = $args[0];
 		$checked = checked( '1', $setting, false );
-		
+
 		echo "<input type='checkbox' id='wpcollab_hello_emoji_$post_type' name='wpcollab_hello_emoji_settings[$post_type]' value='1' $checked />";
+	}
+
+	/**
+	 * @todo
+	 *
+	 * @since 1.0
+	 */
+	function comments() {
+
+		$settings = get_option( 'wpcollab_hello_emoji_settings' );
+		$setting = ( isset( $settings['comment'] ) ) ? esc_attr( $settings['comment'] ) : false;
+		$checked = checked( '1', $setting, false );
+
+		echo "<input type='checkbox' id='wpcollab_hello_emoji_comment' name='wpcollab_hello_emoji_settings[comment]' value='1' $checked />";
 	}
 
 	/**
@@ -214,6 +246,16 @@ class WPCollab_HelloEmoji_Admin {
 	 */
 	function post_types_desc() {
 		echo '<p>' . __( 'Some Description about Post Type stuff', 'hello-emoji' ) . '</p>';
+	}
+
+	/**
+	 * @todo
+	 *
+	 * @since 1.0
+	 */
+	function comments_desc() {
+
+		echo '<p>' . __( 'Check if you want to enable Emoji for the comments.', 'hello-emoji' ) . '</p>';
 	}
 
 	/**
