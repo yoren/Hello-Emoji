@@ -81,6 +81,17 @@ class WPCollab_HelloEmoji_Frontend {
 
 		if ( ! empty( $content ) ) {
 
+			$settings = get_option( 'wpcollab_hello_emoji_settings' );
+
+			// Check if post type is enabled
+			if ( 'the_content' == current_filter() && !$settings[$post->post_type] ) {
+				return $content;
+			}
+			// Check if comment is enabled
+			if ( 'comment_text' == current_filter() && !$settings['comment'] ) {
+				return $content;
+			}
+
 			$classes = apply_filters( 'wpcollab_hello_emoji_css_classes', array( 'wpcollab-hello-emoji' ) );
 			$open_tag = '<div class="' . join( ' ', $classes ) . '">';
 			$close_tag = '</div>';
