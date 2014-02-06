@@ -2,7 +2,7 @@
 /*
 Plugin Name: Hello Emoji
 Plugin URI: https://github.com/WPCollab/Hello-Emoji
-Description: @TODO
+Description: Get an auto-complete list of Emoji suggestions in the editor, and convert Emojis to icons on display.
 Version: 0.1-alpha
 Author: WPCollab Team
 Author URI: https://github.com/WPCollab/Hello-Emoji/graphs/contributors
