@@ -65,8 +65,6 @@ class WPCollab_HelloEmoji_Frontend {
 		// Load admin JavaScript
 		add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_frontend_scripts' ) );
 
-		add_action( 'init', array( $this, 'smilies_init' ), 4 );
-
 	} // END __construct()
 
 	/**
@@ -138,55 +136,5 @@ class WPCollab_HelloEmoji_Frontend {
 		}
 
 	} // END enqueue_frontend_scripts()
-
-	function smilies_init() {
-
-		global $wpsmiliestrans;
-
-		if ( !isset( $wpsmiliestrans ) ) {
-			$wpsmiliestrans = array(
-				':mrgreen:' => 'icon_mrgreen.gif',
-				':neutral:' => 'icon_neutral.gif',
-				':twisted:' => 'icon_twisted.gif',
-				  ':arrow:' => 'icon_arrow.gif',
-				  ':shock:' => 'icon_eek.gif',
-				    ':???:' => 'icon_confused.gif',
-				   ':evil:' => 'icon_evil.gif',
-				   ':idea:' => 'icon_idea.gif',
-				   ':oops:' => 'icon_redface.gif',
-				   ':razz:' => 'icon_razz.gif',
-				   ':roll:' => 'icon_rolleyes.gif',
-				    ':eek:' => 'icon_surprised.gif',
-				    ':lol:' => 'icon_lol.gif',
-				    ':mad:' => 'icon_mad.gif',
-				    ':sad:' => 'icon_sad.gif',
-				      '8-)' => 'icon_cool.gif',
-				      '8-O' => 'icon_eek.gif',
-				      ':-(' => 'icon_sad.gif',
-				      ':-)' => 'icon_smile.gif',
-				      ':-?' => 'icon_confused.gif',
-				      ':-D' => 'icon_biggrin.gif',
-				      ':-P' => 'icon_razz.gif',
-				      ':-o' => 'icon_surprised.gif',
-				      ':-x' => 'icon_mad.gif',
-				      ':-|' => 'icon_neutral.gif',
-				      ';-)' => 'icon_wink.gif',
-				// This one transformation breaks regular text with frequency.
-				//     '8)' => 'icon_cool.gif',
-				       '8O' => 'icon_eek.gif',
-				       ':(' => 'icon_sad.gif',
-				       ':)' => 'icon_smile.gif',
-				       ':?' => 'icon_confused.gif',
-				       ':D' => 'icon_biggrin.gif',
-				       ':P' => 'icon_razz.gif',
-				       ':o' => 'icon_surprised.gif',
-				       ':x' => 'icon_mad.gif',
-				       ':|' => 'icon_neutral.gif',
-				       ';)' => 'icon_wink.gif',
-				      ':!:' => 'icon_exclaim.gif',
-				      ':?:' => 'icon_question.gif',
-			);
-		}
-	}
 
 } // END class WPCollab_HelloEmoji_Frontend
