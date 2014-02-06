@@ -9,13 +9,13 @@ Stable tag: 0.1.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-This plugin lets you use Emoji in WordPress. Get an auto-complete list of Emoji suggestions in the editor, and convert Emojies to icons on display.
+This plugin lets you use Emoji in WordPress. Get an auto-complete list of Emoji suggestions in the editor, and convert Emojis to icons on display.
 
 == Description ==
 
 Hello Emoji is more than an a plugin, it represents the hopes of a generation. It is going to be proof of the idea that WordPress represents: that free software can bring people together to accomplish something that they couldn't do themselves, while adding something of value to the commons for all to share.
 
-With Hello Emoji, by typing a ":" in the editor, you'll get an auto-complete list of Emoji suggestions. Using Emoji in the GitHub style saves you from remembering the emoticons or shortcodes (many plugins use shortcodes to insert the Emojies).
+With Hello Emoji, by typing a ":" in the editor, you'll get an auto-complete list of Emoji suggestions. Using Emoji in the GitHub style saves you from remembering the emoticons or shortcodes (many plugins use shortcodes to insert the Emojis).
 
 There are 2 options in the plugin Settings:
 1. Enable the Emoji functions by post type.
