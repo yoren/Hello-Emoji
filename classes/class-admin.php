@@ -110,7 +110,7 @@ class WPCollab_HelloEmoji_Admin {
 
 		add_settings_field(
 			'comment', // ID
-			__( 'Enable Emoji for Comments', 'hello-emoji' ), // Label
+			__( 'Emojis', 'hello-emoji' ), // Label
 			array( $this, 'comments' ), // Callback
 			'writing', // Page on which to display
 			'default', // Section
@@ -154,9 +154,13 @@ class WPCollab_HelloEmoji_Admin {
 		$settings = get_option( 'wpcollab_hello_emoji_settings' );
 		$setting = ( isset( $settings['comment'] ) ) ? esc_attr( $settings['comment'] ) : false;
 		$checked = checked( '1', $setting, false );
-
-		echo "<input type='checkbox' id='wpcollab_hello_emoji_comment' name='wpcollab_hello_emoji_settings[comment]' value='1' $checked /> <span>Enable emoji in comments, too.</span>";
-		echo '<p class="description">' . __( 'Hello Emoji enable emoji in post content by default.', 'hello-emoji' ) . '</p>';
+		?>
+		<label for="wpcollab_hello_emoji_comment">
+			<input type='checkbox' id='wpcollab_hello_emoji_comment' name='wpcollab_hello_emoji_settings[comment]' value='1' <?php echo $checked; ?>/>
+			<?php _e( 'Enable emoji in comments', 'hello-emoji' ); ?>
+		</label>
+		<p class="description"><?php _e( 'Activate to process emojis in comments additionally to your content', 'hello-emoji' ); ?></p>
+		<?php
 	}
 
 	/**
