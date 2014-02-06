@@ -104,6 +104,22 @@ class WPCollab_HelloEmoji_Admin {
 	 */
 	public function register_settings() {
 
+		register_setting(
+			'writing',                 // settings page
+			'wpcollab_hello_emoji_settings'          // option name
+		);
+
+		add_settings_field(
+			'comment', // ID
+			__( 'Enable Emoji for Comments', 'hello-emoji' ), // Label
+			array( $this, 'comments' ), // Callback
+			'writing', // Page on which to display
+			'default', // Section
+			array(
+				'label_for' => 'wpcollab_hello_emoji_comment'
+			)
+		);
+
 		add_settings_section(
 			'post_types', // Section name
 			__( 'Post Types', 'hello-emoji' ), // Section title
@@ -236,7 +252,8 @@ class WPCollab_HelloEmoji_Admin {
 		$setting = ( isset( $settings['comment'] ) ) ? esc_attr( $settings['comment'] ) : false;
 		$checked = checked( '1', $setting, false );
 
-		echo "<input type='checkbox' id='wpcollab_hello_emoji_comment' name='wpcollab_hello_emoji_settings[comment]' value='1' $checked />";
+		echo "<p><span><em>Hello Emoji enable emoji in post content by default.</em></span><br />";
+		echo "<input type='checkbox' id='wpcollab_hello_emoji_comment' name='wpcollab_hello_emoji_settings[comment]' value='1' $checked /> <span>Enable emoji in comments, too.</span></p>";
 	}
 
 	/**
