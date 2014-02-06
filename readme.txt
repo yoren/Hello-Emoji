@@ -9,17 +9,17 @@ Stable tag: 0.1.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-This plugin lets you use Emoji in WordPress. Get an auto-complete list of Emoji suggestions in the editor, and convert Emojis to icons on display.
+This plugin lets you use emoji in WordPress. Get an auto-complete list of emoji suggestions in the editor, and convert emoticons to emoji on display.
 
 == Description ==
 
 Hello Emoji is more than an a plugin, it represents the hopes of a generation. It is going to be proof of the idea that WordPress represents: that free software can bring people together to accomplish something that they couldn't do themselves, while adding something of value to the commons for all to share.
 
-With Hello Emoji, by typing a ":" in the editor, you'll get an auto-complete list of Emoji suggestions. Using Emoji in the GitHub style saves you from remembering the emoticons or shortcodes (many plugins use shortcodes to insert the Emojis).
+With Hello Emoji, by typing a ":" in the editor, you'll get an auto-complete list of emoji suggestions. Using emoji in the GitHub style saves you from remembering the emoticons or shortcodes (many plugins use shortcodes to insert the emoji).
 
 There are 2 options in the plugin Settings:
-1. Enable the Emoji functions by post type.
-2. Enable the Emoji functions in comments or not.
+1. Enable emoji in post content by post type.
+2. Enable emoji in comments or not.
 
 == Installation ==
 
@@ -49,11 +49,11 @@ There are 2 options in the plugin Settings:
 
 = Can I use auto-complete in Visual editor (TinyMCE)? =
 
-We'll add auto-complete support for TinyMCE in the future release, but currently the auto-complete Emoji suggestions only works in Text editor.
+We'll add auto-complete support for TinyMCE in the future release, but currently the auto-complete emoji suggestions only works in Text editor.
 
-= Can I use Emoji in the custom fields or text widgets? =
+= Can I use emoji in the custom fields or text widgets? =
 
-Converting Emoji on diplay only works for post content and comments for now.
+Converting emoticons to emoji on diplay only works for post content and comments for now.
 
 = I have some great ideas about Hello Emoji, will you be interested? =
 
@@ -62,7 +62,7 @@ Of course! Please come to [our P2](http://make.wpcollab.co) and tell us more!
 == Screenshots ==
 
 1. The Settings page.
-2. Type a ":" in the editor, you'll get an auto-complete list of Emoji suggestions.
+2. Type a ":" in the editor, you'll get an auto-complete list of emoji suggestions.
 
 == Changelog ==
 
