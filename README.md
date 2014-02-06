@@ -1,5 +1,6 @@
 # Hello-Emoji
 [![Gitter chat](https://badges.gitter.im/WPCollab/Hello-Emoji.png)](https://gitter.im/WPCollab/Hello-Emoji)
+[![Scrutinizer Quality Score](https://scrutinizer-ci.com/g/WPCollab/Hello-Emoji/badges/quality-score.png?s=c6bd803b8f7a81825ef645778313b2a2de2fdb5e)](https://scrutinizer-ci.com/g/WPCollab/Hello-Emoji/)
 
 __@todo short description __
 
@@ -51,7 +52,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 
 ## Changelog
-* __1.0__ ( @todo 2014-mm-dd ) first release
-    * TBD
+* __1.0__ ( @todo 2014-mm-dd )
+    * Initial release
 
 [4.1]: https://github.com/WPCollab/Hello-Emoji/issues
