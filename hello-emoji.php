@@ -99,11 +99,11 @@ class WPCollab_HelloEmoji {
 
 		if ( is_admin() ) {
 
-			$wpcollab_helloemoji_admin = new WPCollab_HelloEmoji_Admin();
+			new WPCollab_HelloEmoji_Admin();
 
 		} elseif ( !is_admin() ) {
 
-			$wpcollab_helloemoji_frontend = new WPCollab_HelloEmoji_Frontend();
+			new WPCollab_HelloEmoji_Frontend();
 
 		}
 
@@ -264,4 +264,4 @@ class WPCollab_HelloEmoji {
  *
  * @var	object	$wpcollab_helloemoji holds the instantiated class {@uses WPCollab_HelloEmoji}
  */
-$wpcollab_helloemoji = new WPCollab_HelloEmoji();
+new WPCollab_HelloEmoji();
