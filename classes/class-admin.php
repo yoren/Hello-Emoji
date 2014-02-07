@@ -124,29 +124,6 @@ class WPCollab_HelloEmoji_Admin {
 	/**
 	 * @todo
 	 *
-	 * @since	1.0.0
-	 * @access	public
-	 *
-	 * @see		get_current_screen()
-	 *
-	 * @return	string
- 	 */
-	public function help_tabs() {
-
-		$screen = get_current_screen();
-		$screen->add_help_tab(
-			array(
-				'id'        => 'wpcollab-hello-emoji_options',
-				'title'     => __( 'Help', 'hello-emoji' ),
-				'callback'  => '__return_empty_string' // array( $this, 'option_tab')
-			)
-		);
-
-	} // END help_tabs()
-
-	/**
-	 * @todo
-	 *
 	 * @since 1.0
 	 */
 	function comments() {
