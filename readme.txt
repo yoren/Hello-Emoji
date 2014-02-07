@@ -61,7 +61,7 @@ Of course! Please come to [our P2](http://make.wpcollab.co) and tell us more!
 
 == Screenshots ==
 
-1. The Settings page.
+1. Enable emojis in comments on the Writing Settings page.
 2. Type a ":" in the editor, you'll get an auto-complete list of emoji suggestions.
 
 == Changelog ==
