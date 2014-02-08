@@ -59,8 +59,10 @@ class WPCollab_HelloEmoji_Admin {
 		self::$instance = $this;
 
 		add_action( 'admin_init', array( $this, 'register_settings' ) );
-		/** Load admin JavaScript. */
+		// Load admin JavaScript.
 		add_action( 'admin_enqueue_scripts', array( $this, 'enqueue_admin_scripts' ) );
+		// Add an action link pointing to the options page.
+		add_filter( 'plugin_action_links_' . plugin_basename ( WPCollab_HelloEmoji::get_file() ), array( $this, 'add_action_links' ) );
 
 	} // END __construct()
 
@@ -123,9 +125,31 @@ class WPCollab_HelloEmoji_Admin {
 	} // END register_settings()
 
 	/**
+	 * Add settings action link to the plugins page.
+	 *
+	 * @since    0.1.0
+	 * @access   public
+	 *
+	 * @see      admin_url()
+	 *
+	 * @param    array $links Array of links
+	 * @return   array Array of links
+	 */
+	public function add_action_links( $links ) {
+
+		return array_merge(
+			array(
+				'settings' => '<a href="' . admin_url( 'options-writing.php' ) . '">' . __( 'Settings', 'hello-emoji' ) . '</a>'
+			),
+			$links
+		);
+
+	} // END add_action_links()
+
+	/**
 	 * Print the HTML of comments setting.
 	 *
-	 * @since 1.0
+	 * @since 0.1.0
 	 * @access public
 	 *
 	 * @see get_option()
