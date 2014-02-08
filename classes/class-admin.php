@@ -16,14 +16,14 @@ if ( !defined( 'ABSPATH' ) ) {
 /**
  * @todo Description
  *
- * @since	1.0.0
+ * @since	0.1.0
  */
 class WPCollab_HelloEmoji_Admin {
 
 	/**
 	 * Holds a copy of the object for easy reference.
 	 *
-	 * @since	1.0.0
+	 * @since	0.1.0
 	 * @static
 	 * @access	private
 	 * @var		object	$instance
@@ -33,7 +33,7 @@ class WPCollab_HelloEmoji_Admin {
 	/**
 	 * Getter method for retrieving the object instance.
 	 *
-	 * @since	1.0.0
+	 * @since	0.1.0
 	 * @static
 	 * @access	public
 	 *
@@ -48,7 +48,7 @@ class WPCollab_HelloEmoji_Admin {
 	/**
 	 * Constructor. Hooks all interactions to initialize the class.
 	 *
-	 * @since	1.0.0
+	 * @since	0.1.0
 	 * @access	public
 	 *
 	 * @return	void
@@ -66,7 +66,7 @@ class WPCollab_HelloEmoji_Admin {
 	/**
 	 * Register and enqueue admin-specific JavaScript.
 	 *
-	 * @since   1.0.0
+	 * @since   0.1.0
 	 * @access  public
 	 *
 	 * @return  void
@@ -92,7 +92,7 @@ class WPCollab_HelloEmoji_Admin {
 	/**
 	 * @todo description
 	 *
-	 * @since	1.0.0
+	 * @since	0.1.0
 	 * @access	public
 	 *
 	 * @see __()
@@ -143,7 +143,7 @@ class WPCollab_HelloEmoji_Admin {
 	/**
 	 * @todo description
 	 *
-	 * @since	1.0.0
+	 * @since	0.1.0
 	 * @access	public
 	 *
 	 * @return	string

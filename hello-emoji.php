@@ -3,7 +3,7 @@
 Plugin Name: Hello Emoji
 Plugin URI: https://github.com/WPCollab/Hello-Emoji
 Description: Hello Emoji is a plugin that converts emoticons to emoji. But it's more than a plugin, it symbolizes the hope and enthusiasm of an entire generation. It's proof of the idea that WordPress represents: that free software can bring people together to accomplish something that they couldn’t do themselves, while adding something of value to the commons for all to share.
-Version: 0.1-alpha
+Version: 0.1.0
 Author: WPCollab Team
 Author URI: https://github.com/WPCollab/Hello-Emoji/graphs/contributors
 License: GPL2 or later
@@ -32,7 +32,7 @@ Domain Path: /languages
  * @copyright	Copyright (c) 2014, WPCollab Team
  * @license		http://www.gnu.org/licenses/gpl-2.0.html GPLv2
  * @package		WPCollab\HelloEmoji
- * @version		0.1-alpha
+ * @version		0.1.0
  */
 
 //avoid direct calls to this file
@@ -48,14 +48,14 @@ spl_autoload_register( 'WPCollab_HelloEmoji::autoload' );
 /**
  * Main class to run the plugin
  *
- * @since	1.0.0
+ * @since	0.1.0
  */
 class WPCollab_HelloEmoji {
 
 	/**
 	 * Holds a copy of the object for easy reference.
 	 *
-	 * @since	1.0.0
+	 * @since	0.1.0
 	 * @static
 	 * @access	private
 	 * @var		object	$instance
@@ -65,17 +65,17 @@ class WPCollab_HelloEmoji {
 	/**
 	 * Current version of the plugin.
 	 *
-	 * @since	1.0.0
+	 * @since	0.1.0
 	 * @static
 	 * @access	public
 	 * @var		string	$version
 	 */
-	public static $version = '0.1-alpha';
+	public static $version = '0.1.0';
 
 	/**
 	 * Holds a copy of the main plugin filepath.
 	 *
-	 * @since	1.0.0
+	 * @since	0.1.0
 	 * @access	private
 	 * @var		string	$file
 	 */
@@ -84,7 +84,7 @@ class WPCollab_HelloEmoji {
 	/**
 	 * Constructor. Hooks all interactions to initialize the class.
 	 *
-	 * @since	1.0.0
+	 * @since	0.1.0
 	 * @access	public
 	 *
 	 * @see	add_action()
@@ -116,7 +116,7 @@ class WPCollab_HelloEmoji {
 	/**
 	 * @todo
 	 *
-	 * @since	1.0.0
+	 * @since	0.1.0
 	 * @access	public
 	 *
 	 * @see		apply_filters()
@@ -137,7 +137,7 @@ class WPCollab_HelloEmoji {
 	/**
 	 * Autoloader to load classes as needed.
 	 *
-	 * @since	1.0.0
+	 * @since	0.1.0
 	 * @static
 	 * @access	public
 	 *
@@ -166,7 +166,7 @@ class WPCollab_HelloEmoji {
 	/**
 	 * Getter method for retrieving the object instance.
 	 *
-	 * @since	1.0.0
+	 * @since	0.1.0
 	 * @static
 	 * @access	public
 	 *
@@ -181,7 +181,7 @@ class WPCollab_HelloEmoji {
 	/**
 	 * Getter method for retrieving the main plugin filepath.
 	 *
-	 * @since	1.0.0
+	 * @since	0.1.0
 	 * @static
 	 * @access	public
 	 *
@@ -196,7 +196,7 @@ class WPCollab_HelloEmoji {
 	/**
 	 * Load the plugin's textdomain hooked to 'plugins_loaded'.
 	 *
-	 * @since	1.0.0
+	 * @since	0.1.0
 	 * @access	public
 	 *
 	 * @see		load_plugin_textdomain()
@@ -218,7 +218,7 @@ class WPCollab_HelloEmoji {
 	/**
 	 * Fired when plugin is activated
 	 *
-	 * @since	1.0.0
+	 * @since	0.1.0
 	 * @static
 	 * @access	public
 	 *
@@ -257,7 +257,7 @@ class WPCollab_HelloEmoji {
 /**
  * Instantiate the main class
  *
- * @since	1.0.0
+ * @since	0.1.0
  * @access	public
  *
  * @global	object	$wpcollab_helloemoji

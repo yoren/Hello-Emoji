@@ -16,14 +16,14 @@ if ( ! defined( 'ABSPATH' ) ) {
 /**
  * @todo Description
  *
- * @since	1.0.0
+ * @since	0.1.0
  */
 class WPCollab_HelloEmoji_Frontend {
 
 	/**
 	 * Holds a copy of the object for easy reference.
 	 *
-	 * @since	1.0.0
+	 * @since	0.1.0
 	 * @static
 	 * @access	private
 	 * @var		object	$instance
@@ -33,7 +33,7 @@ class WPCollab_HelloEmoji_Frontend {
 	/**
 	 * Getter method for retrieving the object instance.
 	 *
-	 * @since	1.0.0
+	 * @since	0.1.0
 	 * @static
 	 * @access	public
 	 *
@@ -48,7 +48,7 @@ class WPCollab_HelloEmoji_Frontend {
 	/**
 	 * Constructor. Hooks all interactions to initialize the class.
 	 *
-	 * @since	1.0.0
+	 * @since	0.1.0
 	 * @access	public
 	 *
 	 * @return	void
@@ -73,7 +73,7 @@ class WPCollab_HelloEmoji_Frontend {
 	/**
 	 * Add class to content and comment
 	 *
-	 * @since   1.0.0
+	 * @since   0.1.0
 	 * @access  public
 	 *
 	 * @return  void
@@ -104,7 +104,7 @@ class WPCollab_HelloEmoji_Frontend {
 	/**
 	 * Enqueue frontend scripts
 	 *
-	 * @since   1.0.0
+	 * @since   0.1.0
 	 * @access  public
 	 *
 	 * @return  void
@@ -134,7 +134,7 @@ class WPCollab_HelloEmoji_Frontend {
 	/**
 	 * Set global $wpsmiliestrans
 	 *
-	 * @since   1.0.0
+	 * @since   0.1.0
 	 * @access  public
 	 *
 	 * @return  void

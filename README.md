@@ -10,7 +10,7 @@ __@todo short description __
 | ----:						| :----				| :---: | :----						| :----				|
 | Requires at least:		| __3.1__			| *		| [GitHub-Repository][1.3]	| [Translate][1.6]	|
 | Tested up to:				| __3.6__			| *		| [Issue-Tracker][1.4]		|					|
-| Current stable release:	| __[TBD][1.5]__	| *		| Current dev version:		| [0.1-alpha][1.7]	|
+| Current stable release:	| __[TBD][1.5]__	| *		| Current dev version:		| [0.1.0][1.7]	|
 
 [1.1]: https://github.com/WPCollab/Hello-Emoji
 [1.2]: #@todo
