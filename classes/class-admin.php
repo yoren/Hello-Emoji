@@ -14,7 +14,8 @@ if ( !defined( 'ABSPATH' ) ) {
 }
 
 /**
- * @todo Description
+ * Plugin class. This class should ideally be used to work with the
+ * administrative side of the WordPress site.
  *
  * @since	0.1.0
  */
@@ -90,13 +91,13 @@ class WPCollab_HelloEmoji_Admin {
 	} // END enqueue_admin_scripts()
 
 	/**
-	 * @todo description
+	 * Register settings.
 	 *
 	 * @since	0.1.0
 	 * @access	public
 	 *
 	 * @see __()
-	 * @see	add_settings_section()
+	 * @see	register_setting()
 	 * @see	add_settings_field()
 	 *
 	 * @return	void
@@ -122,11 +123,19 @@ class WPCollab_HelloEmoji_Admin {
 	} // END register_settings()
 
 	/**
-	 * @todo
+	 * Print the HTML of comments setting.
 	 *
 	 * @since 1.0
+	 * @access public
+	 *
+	 * @see get_option()
+	 * @see esc_attr()
+	 * @see checked()
+	 * @see _e()
+	 *
+	 * @return string HTML of setting field
 	 */
-	function comments() {
+	public function comments() {
 
 		$settings = get_option( 'wpcollab_hello_emoji_settings' );
 		$setting = ( isset( $settings['comment'] ) ) ? esc_attr( $settings['comment'] ) : false;
@@ -138,31 +147,7 @@ class WPCollab_HelloEmoji_Admin {
 		</label>
 		<p class="description"><?php _e( 'Activate to process emojis in comments in addition to post content.', 'hello-emoji' ); ?></p>
 		<?php
-	}
 
-	/**
-	 * @todo description
-	 *
-	 * @since	0.1.0
-	 * @access	public
-	 *
-	 * @return	string
-	 */
-	public function settings_page() { ?>
-
-		<div class="wrap">
-			<h2><?php _e( 'Emoji Settings', 'hello-emoji' ); ?></h2>
-			<form action="options.php" method="post">
-			<?php
-				wp_nonce_field( 'wpcollab-hello-emoji-settings-update', 'wpcollab-hello-emoji-settings-nonce' );
-				settings_fields( 'wpcollab_hello_emoji_settings' );
-				do_settings_sections( 'wpcollab_hello_emoji_settings' );
-				submit_button();
-			?>
-			</form>
-		</div><!-- .wrap -->
-
-	<?php
-	} // END settings_page()
+	} // END comments()
 
 } // END class WPCollab_HelloEmoji_Admin

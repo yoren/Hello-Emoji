@@ -89,7 +89,6 @@ class WPCollab_HelloEmoji {
 	 *
 	 * @see	add_action()
 	 * @see	register_activation_hook()
-	 * @see	register_deactivation_hook()
 	 *
 	 * @return	void
 	 */
@@ -114,7 +113,7 @@ class WPCollab_HelloEmoji {
 	} // END __construct()
 
 	/**
-	 * @todo
+	 * The default value for the settings.
 	 *
 	 * @since	0.1.0
 	 * @access	public
@@ -132,7 +131,8 @@ class WPCollab_HelloEmoji {
 		$options = apply_filters( 'wpcollab_hello_emoji_defaults', $defaults );
 
 		return $options;
-	}
+
+	} // END get_defaults()
 
 	/**
 	 * Autoloader to load classes as needed.
@@ -170,7 +170,7 @@ class WPCollab_HelloEmoji {
 	 * @static
 	 * @access	public
 	 *
-	 * @return	object	WPC_SocialTools::$instance
+	 * @return	object	WPCollab_HelloEmoji::$instance
 	 */
 	public static function get_instance() {
 

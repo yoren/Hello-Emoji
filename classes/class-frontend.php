@@ -14,7 +14,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 /**
- * @todo Description
+ * Plugin class. This class should ideally be used to work with the
+ * public-facing side of the WordPress site.
  *
  * @since	0.1.0
  */
@@ -71,12 +72,13 @@ class WPCollab_HelloEmoji_Frontend {
 	} // END __construct()
 
 	/**
-	 * Add class to content and comment
+	 * Add class to content and comment.
 	 *
 	 * @since   0.1.0
 	 * @access  public
 	 *
-	 * @return  void
+	 * @param string $content Post content or comment text
+	 * @return  string Content
 	 */
 	public function wrap_content( $content ) {
 
@@ -102,10 +104,17 @@ class WPCollab_HelloEmoji_Frontend {
 	} // END wrap_content()
 
 	/**
-	 * Enqueue frontend scripts
+	 * Enqueue frontend scripts.
 	 *
 	 * @since   0.1.0
 	 * @access  public
+	 *
+	 * @see  get_option()
+	 * @see  is_singular()
+	 * @see  comments_open()
+	 * @see  wp_enqueue_script()
+	 * @see  plugins_url()
+	 * @see  wp_enqueue_style()
 	 *
 	 * @return  void
 	 */
@@ -132,14 +141,14 @@ class WPCollab_HelloEmoji_Frontend {
 	} // END enqueue_frontend_scripts()
 
 	/**
-	 * Set global $wpsmiliestrans
+	 * Change global $wpsmiliestrans in WordPress.
 	 *
 	 * @since   0.1.0
 	 * @access  public
 	 *
 	 * @return  void
 	 */
-	function smilies_init() {
+	public function smilies_init() {
 
 		global $wpsmiliestrans;
 
@@ -187,6 +196,7 @@ class WPCollab_HelloEmoji_Frontend {
 				      ':?:' => 'icon_question.gif',
 			);
 		}
-	} // END smilies_init
+
+	} // END smilies_init()
 
 } // END class WPCollab_HelloEmoji_Frontend
