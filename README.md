@@ -1,8 +1,8 @@
 # Hello-Emoji
-[![Gitter chat](https://badges.gitter.im/WPCollab/Hello-Emoji.png)](https://gitter.im/WPCollab/Hello-Emoji)
-[![Scrutinizer Quality Score](https://scrutinizer-ci.com/g/WPCollab/Hello-Emoji/badges/quality-score.png?s=c6bd803b8f7a81825ef645778313b2a2de2fdb5e)](https://scrutinizer-ci.com/g/WPCollab/Hello-Emoji/)
+[![Gitter chat](https://badges.gitter.im/WPCollab/hello-emoji.png)](https://gitter.im/WPCollab/hello-emoji)
+[![Scrutinizer Quality Score](https://scrutinizer-ci.com/g/WPCollab/hello-emoji/badges/quality-score.png?s=c6bd803b8f7a81825ef645778313b2a2de2fdb5e)](https://scrutinizer-ci.com/g/WPCollab/hello-emoji/)
 
-__@todo short description __
+This plugin lets you use emoji in WordPress. Get an auto-complete list of emoji suggestions in the editor, and convert emoticons to emoji on display.
 
 [Homepage][1.1] | [WordPress.org][1.2]
 
@@ -12,16 +12,18 @@ __@todo short description __
 | Tested up to:				| __3.6__			| *		| [Issue-Tracker][1.4]		|					|
 | Current stable release:	| __[TBD][1.5]__	| *		| Current dev version:		| [0.1.0][1.7]	|
 
-[1.1]: https://github.com/WPCollab/Hello-Emoji
-[1.2]: #@todo
-[1.3]: https://github.com/WPCollab/Hello-Emoji
-[1.4]: https://github.com/WPCollab/Hello-Emoji/issues
-[1.5]: #https://github.com/WPCollab/Hello-Emoji/tree/1.0
+[1.1]: https://github.com/WPCollab/hello-emoji
+[1.2]: http://wordpress.org/plugins/hello-emoji/
+[1.3]: https://github.com/WPCollab/hello-emoji
+[1.4]: https://github.com/WPCollab/hello-emoji/issues
+[1.5]: #https://github.com/WPCollab/hello-emoji/tree/1.0
 [1.6]: #http://wp-translate.org/projects/hello-emoji
-[1.7]: https://github.com/WPCollab/Hello-Emoji/archive/master.zip
+[1.7]: https://github.com/WPCollab/hello-emoji/archive/master.zip
 
 ### Description
-@ long description
+Hello Emoji is more than an a plugin, it represents the hopes of a generation. It is going to be proof of the idea that WordPress represents: that free software can bring people together to accomplish something that they couldn't do themselves, while adding something of value to the commons for all to share.
+
+With Hello Emoji, by typing a ":" in the editor, you'll get an auto-complete list of emoji suggestions. Using emojis in the GitHub style saves you from remembering the emoticons or shortcodes (many plugins use shortcodes to insert the emoji). You could enable or disable emojis in comments in the Writing Settings.
 
 
 ### Libraries
@@ -34,7 +36,7 @@ __[GPLv2 or later](http://www.gnu.org/licenses/gpl-2.0.html)__
 
 ```
 Hello Emoji
-Copyright (C) 2014 WPCollab Team (https://github.com/WPCollab/Hello-Emoji/graphs/contributors)
+Copyright (C) 2014 WPCollab Team (https://github.com/WPCollab/hello-emoji/graphs/contributors)
 
 This program is free software; you can redistribute it and/or
 modify it under the terms of the GNU General Public License
@@ -52,7 +54,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 
 ## Changelog
-* __1.0__ ( @todo 2014-mm-dd )
+* __0.1.0__ ( 2014-02-08 )
     * Initial release
 
-[4.1]: https://github.com/WPCollab/Hello-Emoji/issues
+[4.1]: https://github.com/WPCollab/hello-emoji/issues
