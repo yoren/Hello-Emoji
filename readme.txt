@@ -17,6 +17,8 @@ Hello Emoji is more than an a plugin, it represents the hopes of a generation. I
 
 With Hello Emoji, by typing a ":" in the editor, you'll get an auto-complete list of emoji suggestions. Using emojis in the GitHub style saves you from remembering the emoticons or shortcodes (many plugins use shortcodes to insert the emoji). You could enable or disable emojis in comments in the Discussion Settings.
 
+Here is a [cheat sheet](http://www.emoji-cheat-sheet.com/ "Emoji Cheat Sheet") for emojis we support.
+
 == Installation ==
 
 = Using The WordPress Dashboard =
