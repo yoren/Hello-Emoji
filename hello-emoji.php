@@ -263,5 +263,6 @@ class WPCollab_HelloEmoji {
  * @global	object	$wpcollab_helloemoji
  * @var	object	$wpcollab_helloemoji holds the instantiated class {@uses WPCollab_HelloEmoji}
  */
+
 global $wpcollab_helloemoji;
 $wpcollab_helloemoji = new WPCollab_HelloEmoji();
