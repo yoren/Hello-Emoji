@@ -54,6 +54,16 @@ You should have received a copy of the GNU General Public License
 along with this program.  If not, see <http://www.gnu.org/licenses/>.
 ```
 
+Package contains:
+[jQuery Text Complete](https://github.com/yuku-t/jquery-textcomplete)
+
+Copyright [Yuku Takahashi](https://github.com/yuku-t), [MIT License](http://opensource.org/licenses/MIT)
+
+
+[jQuery Emoji](https://github.com/linyows/jquery-emoji)
+
+Copyright [Tomohisa Oda](http://tomohisaoda.com/), [MIT License](http://opensource.org/licenses/MIT)
+
 
 ## Changelog
 * __0.1.0__ ( 2014-02-08 )
