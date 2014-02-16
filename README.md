@@ -9,7 +9,7 @@ This plugin lets you use emojis in WordPress. Get an auto-complete list of emoji
 | WordPress					| Version			| *		| Development				|					|
 | ----:						| :----				| :---: | :----						| :----				|
 | Requires at least:		| __3.1__			| *		| [GitHub-Repository][1.3]	| [Translate][1.6]	|
-| Tested up to:				| __3.6__			| *		| [Issue-Tracker][1.4]		|					|
+| Tested up to:				| __3.8.1__			| *		| [Issue-Tracker][1.4]		|					|
 | Current stable release:	| __[0.1.0][1.5]__	| *		| Current dev version:		| [0.1.0][1.7]	|
 
 [1.1]: https://github.com/WPCollab/hello-emoji
@@ -55,6 +55,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 ```
 
 Package contains:
+
 [jQuery Text Complete](https://github.com/yuku-t/jquery-textcomplete)
 
 Copyright [Yuku Takahashi](https://github.com/yuku-t), [MIT License](http://opensource.org/licenses/MIT)
