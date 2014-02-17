@@ -114,8 +114,8 @@ class WPCollab_HelloEmoji_Admin {
 		);
 
 		register_setting(
-			'discussion',                 // settings page
-			'wpcollab_hello_emoji_settings'          // option name
+			'discussion',
+			'wpcollab_hello_emoji_settings'
 		);
 
 		add_settings_field(
@@ -159,15 +159,14 @@ class WPCollab_HelloEmoji_Admin {
 	 * @since    0.1.0
 	 * @access   public
 	 *
-	 * @see      _e()
+	 * @see      __()
 	 *
 	 * @return   string HTML of setting section
 	 */
 	public function section() {
 
-		?>
-		<p><a name="hello-emoji-settings"></a><?php _e( 'Activate to process emojis in comments in addition to post content.', 'hello-emoji' ); ?></p>
-		<?php
+		echo '<p><a name="hello-emoji-settings"></a>' . __( 'Activate to process emojis in comments in addition to post content.', 'hello-emoji' ) . '</p>';
+
 	} // END section()
 
 	/**
