@@ -74,6 +74,7 @@ class WPCollab_HelloEmoji_Admin {
 	 * @since   0.1.0
 	 * @access  public
 	 *
+	 * @param	string $hook Current page hook
 	 * @return  void
 	 */
 	public function enqueue_admin_scripts( $hook ) {

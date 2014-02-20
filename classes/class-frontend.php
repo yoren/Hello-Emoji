@@ -59,9 +59,9 @@ class WPCollab_HelloEmoji_Frontend {
 		self::$instance = $this;
 
 		// Filter the_content to add a css class to the content
-		add_filter( 'the_content', array( $this, 'wrap_content' ) );
+		add_filter( 'the_content', array( 'WPCollab_HelloEmoji_Frontend', 'wrap_content' ) );
 		// Filter the_content to add a css class to the comment
-		add_filter( 'comment_text', array( $this, 'wrap_content' ) );
+		add_filter( 'comment_text', array( 'WPCollab_HelloEmoji_Frontend', 'wrap_content' ) );
 
 		// Load admin JavaScript
 		add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_frontend_scripts' ) );
@@ -75,12 +75,13 @@ class WPCollab_HelloEmoji_Frontend {
 	 * Add class to content and comment.
 	 *
 	 * @since   0.1.0
+	 * @static
 	 * @access  public
 	 *
 	 * @param string $content Post content or comment text
 	 * @return  string Content
 	 */
-	public function wrap_content( $content ) {
+	public static function wrap_content( $content ) {
 
 		if ( ! empty( $content ) ) {
 
