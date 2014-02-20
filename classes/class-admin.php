@@ -63,6 +63,8 @@ class WPCollab_HelloEmoji_Admin {
 		add_action( 'admin_enqueue_scripts', array( $this, 'enqueue_admin_scripts' ) );
 		// Add an action link pointing to the options page.
 		add_filter( 'plugin_action_links_' . plugin_basename ( WPCollab_HelloEmoji::get_file() ), array( $this, 'add_action_links' ) );
+		// Filter comment_text to add a css class to the comment in edit-comments.php
+		add_filter( 'comment_text', array( 'WPCollab_HelloEmoji_Frontend', 'wrap_content' ) );
 
 	} // END __construct()
 
@@ -88,6 +90,17 @@ class WPCollab_HelloEmoji_Admin {
 
 			wp_localize_script( 'hello-emoji-admin-script', 'hello_emoji', array( 'images_src' => plugins_url( 'images/emoji', WPCollab_HelloEmoji::get_file() ) ) );
 
+		}
+
+		if ( $hook == 'edit-comments.php' ) {
+			$settings = get_option( 'wpcollab_hello_emoji_settings' );
+
+			if ( isset( $settings['comment'] ) ) {
+				wp_enqueue_script( 'jquery-emoji-script', plugins_url( 'lib/jquery-emoji/jquery.emoji.js', WPCollab_HelloEmoji::get_file() ), array( 'jquery' ), WPCollab_HelloEmoji::$version, true );
+				wp_enqueue_script( 'hello-emoji-script', plugins_url( 'js/hello-emoji.js', WPCollab_HelloEmoji::get_file() ), array( 'jquery-emoji-script' ), WPCollab_HelloEmoji::$version, true );
+
+				wp_localize_script( 'hello-emoji-script', 'hello_emoji', array( 'images_src' => plugins_url( 'images/emoji', WPCollab_HelloEmoji::get_file() ) ) );
+			}
 		}
 
 	} // END enqueue_admin_scripts()
