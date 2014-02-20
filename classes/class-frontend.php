@@ -82,8 +82,6 @@ class WPCollab_HelloEmoji_Frontend {
 	 */
 	public function wrap_content( $content ) {
 
-		global $post;
-
 		if ( ! empty( $content ) ) {
 
 			$settings = get_option( 'wpcollab_hello_emoji_settings' );
