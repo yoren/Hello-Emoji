@@ -51,7 +51,7 @@ We'll add auto-complete support for TinyMCE in the future release, but currently
 
 = Can I use emoji in the custom fields or text widgets? =
 
-Converting emoticons to emoji on diplay only works for post content and comments for now.
+Converting emoticons to emojis on display only works for post content and comments for now.
 
 = I have some great ideas about Hello Emoji, will you be interested? =
 
