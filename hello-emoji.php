@@ -42,9 +42,6 @@ if ( !defined( 'ABSPATH' ) ) {
 	exit();
 }
 
-/** Register autoloader */
-spl_autoload_register( 'WPCollab_HelloEmoji::autoload' );
-
 /**
  * Main class to run the plugin
  *
@@ -93,6 +90,8 @@ class WPCollab_HelloEmoji {
 	 * @return	void
 	 */
 	public function __construct() {
+
+		spl_autoload_register( 'self::autoload' );
 
 		self::$instance = $this;
 
