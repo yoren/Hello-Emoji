@@ -10,15 +10,15 @@ This plugin lets you use emojis in WordPress. Just start by typing ":" in the ed
 | ----:						| :----				| :---: | :----						| :----				|
 | Requires at least:		| __3.1__			| *		| [GitHub-Repository][1.3]	| [Translate][1.6]	|
 | Tested up to:				| __3.8.1__			| *		| [Issue-Tracker][1.4]		|					|
-| Current stable release:	| __[0.1.0][1.5]__	| *		| Current dev version:		| [0.1.0][1.7]	|
+| Current stable release:	| __[0.1.0][1.5]__	| *		| Current dev version:		| [develop][1.7]	|
 
 [1.1]: https://github.com/WPCollab/hello-emoji
 [1.2]: http://wordpress.org/plugins/hello-emoji/
 [1.3]: https://github.com/WPCollab/hello-emoji
 [1.4]: https://github.com/WPCollab/hello-emoji/issues
-[1.5]: https://github.com/WPCollab/hello-emoji/tree/v0.1.0
-[1.6]: #http://wp-translate.org/projects/hello-emoji
-[1.7]: https://github.com/WPCollab/hello-emoji/archive/master.zip
+[1.5]: https://github.com/WPCollab/hello-emoji/archive/v0.1.0.zip
+[1.6]: http://wp-translate.org/projects/hello-emoji
+[1.7]: https://github.com/WPCollab/hello-emoji/archive/develop.zip
 
 ### Description
 Hello Emoji is more than an a plugin, it represents the hopes of a generation. It is proof of the idea that WordPress represents: that free software can bring people together to accomplish something that they couldn't do themselves, while adding something of value to the commons for all to share.
