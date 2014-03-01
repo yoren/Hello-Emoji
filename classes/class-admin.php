@@ -1,9 +1,9 @@
 <?php
 /**
- * @author		WPCollab Team
- * @copyright	Copyright (c) 2014, WPCollab Team
- * @license		http://www.gnu.org/licenses/gpl-2.0.html GPLv2
- * @package		WPCollab\HelloEmoji\Admin
+ * @author WPCollab Team
+ * @copyright Copyright (c) 2014, WPCollab Team
+ * @license http://www.gnu.org/licenses/gpl-2.0.html GPLv2
+ * @package WPCollab\HelloEmoji\Admin
  */
 
 //avoid direct calls to this file
@@ -17,28 +17,28 @@ if ( !defined( 'ABSPATH' ) ) {
  * Plugin class. This class should ideally be used to work with the
  * administrative side of the WordPress site.
  *
- * @since	0.1.0
+ * @since 0.1.0
  */
 class WPCollab_HelloEmoji_Admin {
 
 	/**
 	 * Holds a copy of the object for easy reference.
 	 *
-	 * @since	0.1.0
+	 * @since 0.1.0
 	 * @static
-	 * @access	private
-	 * @var		object	$instance
+	 * @access private
+	 * @var object $instance
 	 */
 	private static $instance;
 
 	/**
 	 * Getter method for retrieving the object instance.
 	 *
-	 * @since	0.1.0
+	 * @since 0.1.0
 	 * @static
-	 * @access	public
+	 * @access public
 	 *
-	 * @return	object	WPCollab_HelloEmoji_Admin::$instance
+	 * @return object WPCollab_HelloEmoji_Admin::$instance
 	 */
 	public static function get_instance() {
 
@@ -49,10 +49,10 @@ class WPCollab_HelloEmoji_Admin {
 	/**
 	 * Constructor. Hooks all interactions to initialize the class.
 	 *
-	 * @since	0.1.0
-	 * @access	public
+	 * @since 0.1.0
+	 * @access public
 	 *
-	 * @return	void
+	 * @return void
 	 */
 	public function __construct() {
 
@@ -71,11 +71,11 @@ class WPCollab_HelloEmoji_Admin {
 	/**
 	 * Register and enqueue admin-specific JavaScript.
 	 *
-	 * @since   0.1.0
-	 * @access  public
+	 * @since 0.1.0
+	 * @access public
 	 *
-	 * @param	string $hook Current page hook
-	 * @return  void
+	 * @param string $hook Current page hook
+	 * @return void
 	 */
 	public function enqueue_admin_scripts( $hook ) {
 
@@ -109,14 +109,14 @@ class WPCollab_HelloEmoji_Admin {
 	/**
 	 * Register settings.
 	 *
-	 * @since	0.1.0
-	 * @access	public
+	 * @since 0.1.0
+	 * @access public
 	 *
 	 * @see __()
-	 * @see	register_setting()
-	 * @see	add_settings_field()
+	 * @see register_setting()
+	 * @see add_settings_field()
 	 *
-	 * @return	void
+	 * @return void
 	 */
 	public function register_settings() {
 
@@ -148,13 +148,13 @@ class WPCollab_HelloEmoji_Admin {
 	/**
 	 * Add settings action link to the plugins page.
 	 *
-	 * @since    0.1.0
-	 * @access   public
+	 * @since 0.1.0
+	 * @access public
 	 *
-	 * @see      admin_url()
+	 * @see admin_url()
 	 *
-	 * @param    array $links Array of links
-	 * @return   array Array of links
+	 * @param array $links Array of links
+	 * @return array Array of links
 	 */
 	public function add_action_links( $links ) {
 
@@ -170,12 +170,12 @@ class WPCollab_HelloEmoji_Admin {
 	/**
 	 * Add settings action link to the plugins page.
 	 *
-	 * @since    0.1.0
-	 * @access   public
+	 * @since 0.1.0
+	 * @access public
 	 *
-	 * @see      __()
+	 * @see __()
 	 *
-	 * @return   string HTML of setting section
+	 * @return string HTML of setting section
 	 */
 	public function section() {
 
