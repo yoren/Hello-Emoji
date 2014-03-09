@@ -1,9 +1,9 @@
 <?php
 /**
- * @author		WPCollab Team
- * @copyright	Copyright (c) 2014, WPCollab Team
- * @license		http://www.gnu.org/licenses/gpl-2.0.html GPLv2
- * @package		WPCollab\HelloEmoji\Frontend
+ * @author WPCollab Team
+ * @copyright Copyright (c) 2014, WPCollab Team
+ * @license http://www.gnu.org/licenses/gpl-2.0.html GPLv2
+ * @package WPCollab\HelloEmoji\Frontend
  */
 
 //avoid direct calls to this file
@@ -17,28 +17,28 @@ if ( ! defined( 'ABSPATH' ) ) {
  * Plugin class. This class should ideally be used to work with the
  * public-facing side of the WordPress site.
  *
- * @since	0.1.0
+ * @since 0.1.0
  */
 class WPCollab_HelloEmoji_Frontend {
 
 	/**
 	 * Holds a copy of the object for easy reference.
 	 *
-	 * @since	0.1.0
+	 * @since 0.1.0
 	 * @static
-	 * @access	private
-	 * @var		object	$instance
+	 * @access private
+	 * @var object $instance
 	 */
 	private static $instance;
 
 	/**
 	 * Getter method for retrieving the object instance.
 	 *
-	 * @since	0.1.0
+	 * @since 0.1.0
 	 * @static
-	 * @access	public
+	 * @access public
 	 *
-	 * @return	object	WPCollab_HelloEmoji_Frontend::$instance
+	 * @return object WPCollab_HelloEmoji_Frontend::$instance
 	 */
 	public static function get_instance() {
 
@@ -49,10 +49,10 @@ class WPCollab_HelloEmoji_Frontend {
 	/**
 	 * Constructor. Hooks all interactions to initialize the class.
 	 *
-	 * @since	0.1.0
-	 * @access	public
+	 * @since 0.1.0
+	 * @access public
 	 *
-	 * @return	void
+	 * @return void
 	 */
 	public function __construct() {
 
@@ -74,12 +74,12 @@ class WPCollab_HelloEmoji_Frontend {
 	/**
 	 * Add class to content and comment.
 	 *
-	 * @since   0.1.0
+	 * @since 0.1.0
 	 * @static
-	 * @access  public
+	 * @access public
 	 *
 	 * @param string $content Post content or comment text
-	 * @return  string Content
+	 * @return string Content
 	 */
 	public static function wrap_content( $content ) {
 
@@ -105,17 +105,17 @@ class WPCollab_HelloEmoji_Frontend {
 	/**
 	 * Enqueue frontend scripts.
 	 *
-	 * @since   0.1.0
-	 * @access  public
+	 * @since 0.1.0
+	 * @access public
 	 *
-	 * @see  get_option()
-	 * @see  is_singular()
-	 * @see  comments_open()
-	 * @see  wp_enqueue_script()
-	 * @see  plugins_url()
-	 * @see  wp_enqueue_style()
+	 * @see get_option()
+	 * @see is_singular()
+	 * @see comments_open()
+	 * @see wp_enqueue_script()
+	 * @see plugins_url()
+	 * @see wp_enqueue_style()
 	 *
-	 * @return  void
+	 * @return void
 	 */
 	public function enqueue_frontend_scripts() {
 
@@ -142,10 +142,10 @@ class WPCollab_HelloEmoji_Frontend {
 	/**
 	 * Change global $wpsmiliestrans in WordPress.
 	 *
-	 * @since   0.1.0
-	 * @access  public
+	 * @since 0.1.0
+	 * @access public
 	 *
-	 * @return  void
+	 * @return void
 	 */
 	public function smilies_init() {
 
