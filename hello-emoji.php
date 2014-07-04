@@ -236,7 +236,7 @@ class WPCollab_HelloEmoji {
 			$blogs = $wpdb->get_results( "SELECT blog_id FROM {$wpdb->blogs}", ARRAY_A );
 
 			if ( $blogs ) {
-				foreach( $blogs as $blog ) {
+				foreach ( $blogs as $blog ) {
 					switch_to_blog( $blog['blog_id'] );
 					add_option( 'wpcollab_hello_emoji_settings', $defaults );
 				}

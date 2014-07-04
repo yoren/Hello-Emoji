@@ -125,7 +125,7 @@ class WPCollab_HelloEmoji_Admin {
 			'discussion', // Page on which to display
 			'hello-emoji', // Section
 			array(
-				'label_for' => 'wpcollab_hello_emoji_comment'
+				'label_for' => 'wpcollab_hello_emoji_comment',
 			)
 		);
 
