@@ -36,7 +36,7 @@ Domain Path: /languages
  */
 
 //avoid direct calls to this file
-if ( !defined( 'ABSPATH' ) ) {
+if ( ! defined( 'ABSPATH' ) ) {
 	header( 'Status: 403 Forbidden' );
 	header( 'HTTP/1.1 403 Forbidden' );
 	exit();
@@ -99,7 +99,7 @@ class WPCollab_HelloEmoji {
 
 			new WPCollab_HelloEmoji_Admin();
 
-		} elseif ( !is_admin() ) {
+		} elseif ( ! is_admin() ) {
 
 			new WPCollab_HelloEmoji_Frontend();
 
@@ -124,7 +124,7 @@ class WPCollab_HelloEmoji {
 	public function get_defaults() {
 
 		$defaults = array(
-			'comment' => true
+			'comment' => true,
 		);
 
 		$options = apply_filters( 'wpcollab_hello_emoji_defaults', $defaults );

@@ -7,7 +7,7 @@
  */
 
 //avoid direct calls to this file
-if ( !defined( 'ABSPATH' ) ) {
+if ( ! defined( 'ABSPATH' ) ) {
 	header( 'Status: 403 Forbidden' );
 	header( 'HTTP/1.1 403 Forbidden' );
 	exit();
@@ -62,7 +62,7 @@ class WPCollab_HelloEmoji_Admin {
 		// Load admin JavaScript.
 		add_action( 'admin_enqueue_scripts', array( $this, 'enqueue_admin_scripts' ) );
 		// Add an action link pointing to the options page.
-		add_filter( 'plugin_action_links_' . plugin_basename ( WPCollab_HelloEmoji::get_file() ), array( $this, 'add_action_links' ) );
+		add_filter( 'plugin_action_links_' . plugin_basename( WPCollab_HelloEmoji::get_file() ), array( $this, 'add_action_links' ) );
 		// Filter comment_text to add a css class to the comment in edit-comments.php
 		add_filter( 'comment_text', array( 'WPCollab_HelloEmoji_Frontend', 'wrap_content' ) );
 
