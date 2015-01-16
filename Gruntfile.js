@@ -1,6 +1,8 @@
 module.exports = function (grunt) {
 	grunt.initConfig({
+		
 		pkg: grunt.file.readJSON('package.json'),
+
 		cssmin: {
 			options: {
 				banner: '/* Hello Emoji <%= pkg.version %> - CSS */'
@@ -13,6 +15,7 @@ module.exports = function (grunt) {
 				ext: '.min.css'
 			}
 		},
+
 		uglify: {
 			options: {
 				banner: '/*! Hello Emoji <%= pkg.version %> - JS */\n'
@@ -25,12 +28,7 @@ module.exports = function (grunt) {
 				ext: '.min.js'
 			}
 		},
-		po2mo: {
-			files: {
-				src: 'languages/*.po',
-				expand: true,
-			},
-		},
+
 		watch: {
 			js:  {
 				files: 'js/hello-emoji.js',
@@ -52,6 +50,7 @@ module.exports = function (grunt) {
 				}
 			}
 		},
+
 		// Generate .pot file
 		makepot: {
 			target: {
@@ -149,7 +148,6 @@ module.exports = function (grunt) {
 			}
 		},
 
-
 		// Generate README.md from readme.txt
 		wp_readme_to_markdown: {
 			readme: {
@@ -183,6 +181,16 @@ module.exports = function (grunt) {
 				version2: grunt.file.read('hello-emoji.php').match( /version = '(.*)'/ )[1],
 				compare: '=='
 			}
+		},
+
+		// Transifex integration
+		exec: {
+			txpull: { // Pull Transifex translation - grunt exec:txpull
+				cmd: 'tx pull -a --minimum-perc=90'
+			},
+			txpush: { // Push pot to Transifex - grunt exec:txpush
+				cmd: 'tx push -s'
+			}
 		}
 
 	});
@@ -198,6 +206,8 @@ module.exports = function (grunt) {
 	grunt.registerTask( 'languages', [
 		'checktextdomain',
 		'makepot',
+		'exec:txpush',
+		'exec:txpull',
 		'potomo'
 	]);
 

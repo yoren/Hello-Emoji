@@ -1,0 +1,8 @@
+[main]
+host = https://www.transifex.com
+
+[hello-emoji.hello-emoji]
+file_filter = languages/hello-emoji-<lang>.po
+source_file = languages/hello-emoji.pot
+source_lang = en_US
+type = PO

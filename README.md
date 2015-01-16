@@ -19,6 +19,11 @@ With Hello Emoji, by typing a ":" in the editor, you'll get an auto-complete lis
 
 Here is a [cheat sheet](http://www.emoji-cheat-sheet.com/ "Emoji Cheat Sheet") of emojis we support.
 
+### Development ###
+
+* GitHub Repository: [hello-emoji](https://github.com/WPCollab/hello-emoji)
+* Translation: [https://www.transifex.com/projects/p/hello-emoji/](https://www.transifex.com/projects/p/hello-emoji/)
+
 ## Installation ##
 
 ### Using The WordPress Dashboard ###
