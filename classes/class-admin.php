@@ -51,8 +51,6 @@ class WPCollab_HelloEmoji_Admin {
 	 *
 	 * @since 0.1.0
 	 * @access public
-	 *
-	 * @return void
 	 */
 	public function __construct() {
 
@@ -186,10 +184,9 @@ class WPCollab_HelloEmoji_Admin {
 
 		$settings = get_option( 'wpcollab_hello_emoji_settings' );
 		$setting = ( isset( $settings['comment'] ) ) ? esc_attr( $settings['comment'] ) : false;
-		$checked = checked( '1', $setting, false );
 		?>
 		<label for="wpcollab_hello_emoji_comment">
-			<input type='checkbox' id='wpcollab_hello_emoji_comment' name='wpcollab_hello_emoji_settings[comment]' value='1' <?php echo $checked; ?>/>
+			<input type='checkbox' id='wpcollab_hello_emoji_comment' name='wpcollab_hello_emoji_settings[comment]' value='1' <?php checked( '1', $setting ); ?>/>
 			<?php _e( 'Enable emojis in comments', 'hello-emoji' ); ?>
 		</label>
 		<?php

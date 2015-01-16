@@ -86,8 +86,6 @@ class WPCollab_HelloEmoji {
 	 *
 	 * @see	add_action()
 	 * @see	register_activation_hook()
-	 *
-	 * @return void
 	 */
 	public function __construct() {
 
@@ -153,7 +151,7 @@ class WPCollab_HelloEmoji {
 			if ( file_exists( $file_path ) ) {
 				require_once $file_path;
 			}
-
+			
 		} else {
 
 			return;

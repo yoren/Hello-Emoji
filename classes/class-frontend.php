@@ -51,8 +51,6 @@ class WPCollab_HelloEmoji_Frontend {
 	 *
 	 * @since 0.1.0
 	 * @access public
-	 *
-	 * @return void
 	 */
 	public function __construct() {
 
