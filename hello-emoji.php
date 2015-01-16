@@ -1,12 +1,12 @@
 <?php
 /*
 Plugin Name: Hello Emoji
-Plugin URI: http://wordpress.org/plugins/hello-emoji/
+Plugin URI:  http://wordpress.org/plugins/hello-emoji/
 Description: Hello Emoji is a plugin that converts emoticons to emoji. But it's more than a plugin, it symbolizes the hope and enthusiasm of an entire generation. It's proof of the idea that WordPress represents: that free software can bring people together to accomplish something that they couldn’t do themselves, while adding something of value to the commons for all to share.
-Version: 0.1.1-dev
-Author: WPCollab Team
-Author URI: https://github.com/WPCollab/Hello-Emoji/graphs/contributors
-License: GPL2 or later
+Version:     0.1.1-dev
+Author:      WPCollab Team
+Author URI:  https://github.com/WPCollab/Hello-Emoji/graphs/contributors
+License:     GPL2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: hello-emoji
 Domain Path: /languages
@@ -28,11 +28,11 @@ Domain Path: /languages
 	along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 /**
- * @author WPCollab Team
+ * @author    WPCollab Team
  * @copyright Copyright (c) 2014, WPCollab Team
- * @license http://www.gnu.org/licenses/gpl-2.0.html GPLv2
- * @package WPCollab\HelloEmoji
- * @version 0.1.0
+ * @license   http://www.gnu.org/licenses/gpl-2.0.html GPLv2
+ * @package   WPCollab\HelloEmoji
+ * @version   0.1.1-dev
  */
 
 //avoid direct calls to this file
