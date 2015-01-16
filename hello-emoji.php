@@ -3,7 +3,7 @@
 Plugin Name: Hello Emoji
 Plugin URI: http://wordpress.org/plugins/hello-emoji/
 Description: Hello Emoji is a plugin that converts emoticons to emoji. But it's more than a plugin, it symbolizes the hope and enthusiasm of an entire generation. It's proof of the idea that WordPress represents: that free software can bring people together to accomplish something that they couldn’t do themselves, while adding something of value to the commons for all to share.
-Version: 0.1.0
+Version: 0.1.1-dev
 Author: WPCollab Team
 Author URI: https://github.com/WPCollab/Hello-Emoji/graphs/contributors
 License: GPL2 or later
@@ -67,7 +67,7 @@ class WPCollab_HelloEmoji {
 	 * @access public
 	 * @var string $version
 	 */
-	public static $version = '0.1.0';
+	public static $version = '0.1.1-dev';
 
 	/**
 	 * Holds a copy of the main plugin filepath.
