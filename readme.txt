@@ -64,6 +64,9 @@ Of course! Please come to [our P2](http://make.wpcollab.co) and tell us more!
 
 == Changelog ==
 
+= 0.1.1 (2015-mm-dd) =
+* ADDED Grunt workflow
+
 = 0.1.0 =
 * The first version on WordPress.org.
 
